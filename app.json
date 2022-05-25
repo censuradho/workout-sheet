@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "workout-sheet",
+    "slug": "workout-sheet",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
