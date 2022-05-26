@@ -4,7 +4,7 @@ import { useFonts, Poppins_500Medium, Poppins_600SemiBold } from '@expo-google-f
 
 
 import ThemeProvider from 'src/theme'
-import { Welcome } from 'src/pages'
+import RootRoute from './routes'
 
 
 export default function App() {
@@ -17,7 +17,7 @@ export default function App() {
 
   return (
       <ThemeProvider>
-        <Welcome />
+        <RootRoute />
       </ThemeProvider>
   )
 }
