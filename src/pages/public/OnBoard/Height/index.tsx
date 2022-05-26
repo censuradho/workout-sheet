@@ -1,14 +1,17 @@
 import { useNavigation } from '@react-navigation/native'
-import { useEffect, useLayoutEffect, useState } from 'react'
+import {  useLayoutEffect, useState } from 'react'
 import { Formik } from 'formik'
 
-import { Button, FormInputField, InputField } from 'src/components'
+import { BasicButton, FormInputField } from 'src/components'
 
 
 import { Flex } from 'src/theme/globalStyles'
 import * as DefaultStyles from '../styles'
+
 import { routePaths } from 'src/constants/routes'
+
 import { createHeightSchemaValidation } from 'src/yupValidations/account'
+
 import { useOnBoardContext } from '../OnBoardProvider'
 
 const baseHeight = {
@@ -61,12 +64,12 @@ export function Height () {
                       placeholder="Enter your height here (in cm)" 
                     />
                   </Flex>
-                  <Button 
+                  <BasicButton 
                   iconRight={{
-                    name: 'arowForward',
+                    name: 'arrowForward',
                     size: 16
-                  }} 
-                  variante="basePrimary" onPress={() => onSubmit()}>Continue</Button>
+                  }}
+                  onPress={() => onSubmit()}>Continue</BasicButton>
                 </>
               )}
     

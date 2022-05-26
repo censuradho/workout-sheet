@@ -49,7 +49,7 @@ export function Gender () {
             </Flex>
             <BasicButton
               iconRight={{
-                name: 'arowForward',
+                name: 'arrowForward',
                 size: 16
               }} 
               disabled={gender.length === 0}
