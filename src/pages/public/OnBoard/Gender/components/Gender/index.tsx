@@ -1,7 +1,5 @@
 import { memo } from "react"
 
-import { RectButton } from 'react-native-gesture-handler'
-
 import SvgMale from 'src/assets/male-icon.svg'
 import SvgFemale from 'src/assets/female-icon.svg'
 
