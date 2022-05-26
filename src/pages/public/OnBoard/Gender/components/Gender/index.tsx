@@ -16,18 +16,21 @@ interface GenderProps {
 }
 
 function BaseGender ({ value, active, onPress }: GenderProps) {
-
   const { colors, activityOpacity } = useTheme()
 
+  const colorFill = active ? colors.black : colors.white
+  
+
+  console.log(colorFill)
   const mapGender = (_type: string) => {
     const genders = {
       [GENDER_TYPE.female]: {
         label: 'Female',
-        icon: <SvgFemale  fill={active ? colors.black : colors.white} />
+        icon: <SvgFemale fill={colorFill} />
       },
       [GENDER_TYPE.male]: {
         label: 'Male',
-        icon: <SvgMale  fill={active ? colors.black : colors.white}  />
+        icon: <SvgMale  fill={colorFill}  />
       },
     }
 
