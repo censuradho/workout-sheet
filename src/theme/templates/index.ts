@@ -12,5 +12,5 @@ export const theme = {
     sm: '5px',
     md: '21px'
   },
-  activityOpacity: 0.7
+  activityOpacity: 0.7,
  }

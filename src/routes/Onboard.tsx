@@ -16,11 +16,13 @@ export function OnBoardRoutes () {
       <StatusBar style="light" />
       <Stack.Navigator
         screenOptions={{
-          headerShown: false
+          headerShown: false,
+          animation: 'slide_from_right'
         }}
       >
         <Stack.Screen name={routePaths.public.ON_BOARD.WELCOME} component={OnBoard.Welcome} />
         <Stack.Screen name={routePaths.public.ON_BOARD.GENDER} component={OnBoard.Gender} />
+        <Stack.Screen name={routePaths.public.ON_BOARD.HEIGHT} component={OnBoard.Height} />
       </Stack.Navigator>
     </>
   )

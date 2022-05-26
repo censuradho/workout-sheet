@@ -1,4 +1,4 @@
-import styled from 'styled-components/native'
+import styled, { css } from 'styled-components/native'
 
 
 import { theme } from 'src/theme/templates'
@@ -18,6 +18,9 @@ export const Button = styled.TouchableOpacity<ButtonProps>`
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  ${({ disabled, theme }) => disabled && css`
+    opacity: ${theme.activityOpacity - 0.2};
+  `}
 `
 
 export const Text = styled.Text<Variante>`
