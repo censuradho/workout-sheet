@@ -13,7 +13,7 @@ function BaseWelcome () {
   return (
       <Styles.Container>
         <Styles.ImageBackground 
-          source={require('../../../assets/onboard1.png')} 
+          source={require('../../../../assets/onboard1.png')} 
           resizeMode="cover" 
           style={{ flex: 1 }}
         >

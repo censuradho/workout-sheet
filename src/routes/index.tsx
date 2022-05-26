@@ -1,7 +1,8 @@
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native'
 
 import { useTheme } from 'src/hooks'
-import { Welcome } from 'src/pages'
+
+import { OnBoardRoutes } from './Onboard'
 
 function RootRoute() {
   const { colors } = useTheme()
@@ -17,7 +18,7 @@ function RootRoute() {
         },
       }}
     >
-      <Welcome />
+      <OnBoardRoutes />
     </NavigationContainer>
   )
 }
