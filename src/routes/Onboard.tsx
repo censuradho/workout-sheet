@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator()
 export function OnBoardRoutes () {
   return (
     <>
-      <StatusBar style="dark" />
+      <StatusBar style="light"  />
       <Stack.Navigator
         screenOptions={{
           headerShown: false,

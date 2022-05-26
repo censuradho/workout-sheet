@@ -49,7 +49,7 @@ export function Height () {
           <Formik
               initialValues={details} 
               onSubmit={handleSubmit} 
-              validationSchema={createHeightSchemaValidation}
+              // validationSchema={createHeightSchemaValidation}
 
             >
               {({ handleSubmit: onSubmit, handleChange, handleBlur, values }) => (

@@ -47,7 +47,7 @@ export function Weight () {
           <Formik
               initialValues={details} 
               onSubmit={handleSubmit} 
-              validationSchema={createWeightSchemaValidation}
+              // validationSchema={createWeightSchemaValidation}
             >
              {({ handleSubmit: onSubmit, handleChange, handleBlur, values }) => (
                <>

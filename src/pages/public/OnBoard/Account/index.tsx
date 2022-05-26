@@ -37,7 +37,7 @@ function BaseAccount () {
       // dispatch(actionRegistration(data))
 
       // setAuthHeader(data.token)
-      // navigation.navigate(routePaths.public.ON_BOARD.GENDER as any)
+      navigation.navigate(routePaths.public.ON_BOARD.DONE as any)
       console.log(context)
     } catch (err) {
       console.log(err)

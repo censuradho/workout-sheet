@@ -51,7 +51,7 @@ export function ChronicProblem () {
           <Formik
               initialValues={details} 
               onSubmit={handleSubmit} 
-              validationSchema={createChronicProblemSchemaValidation}
+              // validationSchema={createChronicProblemSchemaValidation}
             >
               {({ handleSubmit: onSubmit, handleChange, handleBlur, values }) => (
                 <>
