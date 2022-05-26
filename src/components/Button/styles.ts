@@ -27,4 +27,5 @@ export const Text = styled.Text<Variante>`
   font-family: ${({ theme }) => theme.fonts.mediumn};
   padding: 0 16px;
 `
+
 export const IconContainer = styled.View``

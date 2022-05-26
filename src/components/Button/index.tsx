@@ -1,5 +1,5 @@
 import { memo, ComponentProps } from 'react'
-import { RectButtonProps } from 'react-native-gesture-handler'
+import { RectButtonProps, GestureHandlerRootView } from 'react-native-gesture-handler'
 import { ActivityIndicator } from 'react-native'
 
 import { useTheme } from 'src/hooks/useTheme'
@@ -22,29 +22,31 @@ function BaseButton({ children, iconLeft, iconRight, disabled, isLoading, ...pro
   const { activityOpacity, buttons, colors } = useTheme()
 
   return (
-    <Styles.Button activeOpacity={activityOpacity} enabled={!disabled} {...props}>
-      {iconLeft &&
-        getIcon({
-          color: props?.variante ? buttons[props?.variante].color : colors.black,
-          size: 16,
-          ...iconLeft,
-        })}
-      {isLoading ? (
-        <ActivityIndicator
-          size={20}
-          color={props?.variante ? buttons[props?.variante].color : colors.black}
-        />
-      ) : (
-        <Styles.Text variante={props?.variante}>{children}</Styles.Text>
-      )}
+    <GestureHandlerRootView>
+      <Styles.Button activeOpacity={activityOpacity} enabled={!disabled} {...props}>
+        {iconLeft &&
+          getIcon({
+            color: props?.variante ? buttons[props?.variante].color : colors.black,
+            size: 16,
+            ...iconLeft,
+          })}
+        {isLoading ? (
+          <ActivityIndicator
+            size={20}
+            color={props?.variante ? buttons[props?.variante].color : colors.black}
+          />
+        ) : (
+          <Styles.Text variante={props?.variante}>{children}</Styles.Text>
+        )}
 
-      {iconRight &&
-        getIcon({
-          color: props?.variante ? buttons[props?.variante].color : colors.black,
-          size: 16,
-          ...iconRight,
-        })}
-    </Styles.Button>
+        {iconRight &&
+          getIcon({
+            color: props?.variante ? buttons[props?.variante].color : colors.black,
+            size: 16,
+            ...iconRight,
+          })}
+      </Styles.Button>
+    </GestureHandlerRootView>
   )
 }
 
