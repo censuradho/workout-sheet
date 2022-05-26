@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native'
 
-import { Button } from 'src/components'
+import { BasicButton, Button } from 'src/components'
 import { Gender as GenderCard } from './components'
 
 import { useEffect, useState } from 'react'
@@ -47,14 +47,13 @@ export function Gender () {
                 onPress={value => setGender(value)} 
                 active={gender === 'female'} />
             </Flex>
-            <Button 
+            <BasicButton
               iconRight={{
                 name: 'arowForward',
                 size: 16
               }} 
               disabled={gender.length === 0}
-              variante="basePrimary" 
-              onPress={handleSubmit}>Continue</Button>
+              onPress={handleSubmit}>Continue</BasicButton>
           </DefaultStyles.FormContainer>
         </DefaultStyles.Content>
       </DefaultStyles.Container>
