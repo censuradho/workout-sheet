@@ -3,14 +3,14 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 
 import { theme } from './templates'
 
-interface ThemeProvicerProps {
+interface ThemeProviderProps {
   children: ReactNode
 }
 
-function ThemeProvider (props: ThemeProvicerProps) {
+function ThemeProvider ({ children }: ThemeProviderProps) {
   return (
     <StyledThemeProvider theme={theme}>
-      {props.children}
+      {children}
     </StyledThemeProvider>
   )
 }

@@ -1,0 +1,23 @@
+import AppLoading from 'expo-app-loading'
+
+import { useFonts, Poppins_500Medium, Poppins_600SemiBold } from '@expo-google-fonts/poppins'
+
+
+import ThemeProvider from 'src/theme'
+import { Welcome } from 'src/pages'
+
+
+export default function App() {
+  const [isFontLoaded] = useFonts({
+    medium: Poppins_500Medium,
+    semiBold: Poppins_600SemiBold,
+  })
+
+  if (!isFontLoaded) return <AppLoading />
+
+  return (
+      <ThemeProvider>
+        <Welcome />
+      </ThemeProvider>
+  )
+}
