@@ -23,7 +23,7 @@ export function FitLevel () {
       fit_level: fitLevel
     })
 
-    navigation.navigate(routePaths.public.ON_BOARD.CHRONIC_PROBLEM as any)
+    navigation.navigate('CHRONIC_PROBLEM')
   }
 
   useEffect(() => {

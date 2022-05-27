@@ -29,7 +29,7 @@ export function Height () {
     context?.onSave({
       height: parseFloat(values.height)
     })
-    navigation.navigate(routePaths.public.ON_BOARD.WEIGHT as any)
+    navigation.navigate('WEIGHT')
   }
 
   useLayoutEffect(() => {

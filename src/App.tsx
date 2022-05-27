@@ -1,6 +1,10 @@
 import AppLoading from 'expo-app-loading'
 
-import { useFonts, Poppins_500Medium, Poppins_600SemiBold } from '@expo-google-fonts/poppins'
+import { 
+  useFonts, 
+  Poppins_500Medium, 
+  Poppins_600SemiBold 
+} from '@expo-google-fonts/poppins'
 
 
 import ThemeProvider from 'src/theme'

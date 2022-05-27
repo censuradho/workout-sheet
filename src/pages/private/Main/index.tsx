@@ -38,7 +38,6 @@ function BaseMain () {
           flexDirection="row" 
           justifyContent="space-between"
           marginBottom={50}
-          
         >
           <Box>
             <Styles.Username>Hello, Gustavo</Styles.Username>

@@ -27,7 +27,7 @@ export function Weight () {
       weight: parseFloat(values.weight)
     })
 
-    navigation.navigate(routePaths.public.ON_BOARD.GOALS as any)  
+    navigation.navigate('GOALS')  
   }
 
   useEffect(() => {

@@ -21,7 +21,7 @@ export function Gender () {
       gender
     })
 
-    navigation.navigate(routePaths.public.ON_BOARD.HEIGHT as any)
+    navigation.navigate('HEIGHT')
   }
 
   useEffect(() => {

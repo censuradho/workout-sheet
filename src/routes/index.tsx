@@ -1,5 +1,6 @@
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { StatusBar } from 'expo-status-bar'
 
 import { useTheme } from 'src/hooks'
 
@@ -7,9 +8,10 @@ import * as Pages from 'src/pages/private'
 import * as OnBoard from 'src/pages/public/OnBoard'
 
 import { routePaths } from 'src/constants/routes'
-import { StatusBar } from 'expo-status-bar'
 
-const Stack = createNativeStackNavigator()
+import { RootStackParamList } from './types'
+
+const Stack = createNativeStackNavigator<RootStackParamList>()
 
 function RootRoute() {
   const { colors } = useTheme()
@@ -33,63 +35,70 @@ function RootRoute() {
         }}
       >
         <Stack.Screen 
-            name={routePaths.public.ON_BOARD.WELCOME} 
+            name="WELCOME"
             component={OnBoard.Welcome}
           />
           <Stack.Screen 
-            name={routePaths.public.ON_BOARD.GENDER} 
+            name="GENDER" 
             component={OnBoard.Gender}
           />
           <Stack.Screen 
-            name={routePaths.public.ON_BOARD.HEIGHT} 
+            name="HEIGHT"
             component={OnBoard.Height}
             options={{
               animation: 'slide_from_right'
             }}
           />
           <Stack.Screen 
-            name={routePaths.public.ON_BOARD.WEIGHT} 
+            name="WEIGHT"
             component={OnBoard.Weight}
             options={{
               animation: 'slide_from_right'
             }}
           />
           <Stack.Screen 
-            name={routePaths.public.ON_BOARD.GOALS} 
+            name="GOALS"
             component={OnBoard.Goals}
             options={{
               animation: 'slide_from_right'
             }}
           />
           <Stack.Screen 
-            name={routePaths.public.ON_BOARD.FIT_LEVEL} 
+            name="FIT_LEVEL"
             component={OnBoard.FitLevel}
             options={{
               animation: 'slide_from_right'
             }}
           />
           <Stack.Screen 
-            name={routePaths.public.ON_BOARD.CHRONIC_PROBLEM} 
+            name="CHRONIC_PROBLEM"
             component={OnBoard.ChronicProblem}
             options={{
               animation: 'slide_from_right'
             }}
           />
           <Stack.Screen 
-            name={routePaths.public.ON_BOARD.ACCOUNT} 
+            name="ACCOUNT"
             component={OnBoard.Account}
             options={{
               animation: 'slide_from_right'
             }}
           />
           <Stack.Screen 
-            name={routePaths.public.ON_BOARD.DONE} 
+            name="DONE"
             component={OnBoard.Done}
             options={{
               animation: 'slide_from_right'
             }}
           />
-          <Stack.Screen name={routePaths.private.MAIN} component={Pages.Main} />
+          <Stack.Screen 
+            name="MAIN"
+            component={Pages.Main} 
+          />
+          <Stack.Screen 
+            name="WEEK"
+            component={Pages.Week} 
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

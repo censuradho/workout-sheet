@@ -24,3 +24,9 @@ export const routePaths = {
   public: publicRoutes,
   private: privateRoutes
 }
+
+export const allRoutes = {
+  ...publicRoutes,
+  ...privateRoutes,
+  ...onBoard
+}

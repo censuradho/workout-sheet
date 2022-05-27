@@ -22,7 +22,7 @@ function BaseWelcome () {
               <Styles.Title>Training sheet for your goals</Styles.Title>
               <Button 
                 fullWidth
-                onPress={() => navigation.navigate(routePaths.public.ON_BOARD.GENDER as any)}
+                onPress={() => navigation.navigate('GENDER')}
               >
                 Create account
               </Button>

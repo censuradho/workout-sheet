@@ -25,7 +25,7 @@ export function Goals () {
       goal
     })
 
-    navigation.navigate(routePaths.public.ON_BOARD.FIT_LEVEL as any)
+    navigation.navigate('FIT_LEVEL')
   }
 
   useEffect(() => {

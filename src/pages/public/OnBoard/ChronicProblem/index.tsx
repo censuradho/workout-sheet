@@ -30,7 +30,7 @@ export function ChronicProblem () {
       chronic_problem: values.chronic_problem
     })
 
-    navigation.navigate(routePaths.public.ON_BOARD.ACCOUNT as any)
+    navigation.navigate('ACCOUNT')
   }
 
   useEffect(() => {
