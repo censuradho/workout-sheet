@@ -25,7 +25,7 @@ export const Button = styled.TouchableOpacity<ButtonProps>`
 
 export const Text = styled.Text<Variante>`
   color: ${({ theme, variante = 'primary' }) => theme.basicButton[variante].color}
-  font-family: ${({ theme }) => theme.fonts.mediumn};
+  font-family: ${({ theme }) => theme.fonts.family.mediumn};
   padding: 0 16px;
 `
 

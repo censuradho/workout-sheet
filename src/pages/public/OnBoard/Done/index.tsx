@@ -29,7 +29,7 @@ export function Done () {
             <DefaultStyles.Title>You are already to go!</DefaultStyles.Title>
             <DefaultStyles.Subtitle>Thanks for taking your time to create account with us. Now is the fun part. Let's explore the app.</DefaultStyles.Subtitle>
           </Flex>
-          <BasicButton>Continue</BasicButton>
+          <BasicButton onPress={() => navigation.navigate(routePaths.private.MAIN as any)}>Continue</BasicButton>
         </Styles.Container>
       </DefaultStyles.Container>
     </DefaultStyles.SafeAreaView>

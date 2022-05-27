@@ -51,7 +51,7 @@ function BaseAccount () {
     <DefaultStyles.SafeAreaView>
       <DefaultStyles.Container>
         <DefaultStyles.Content>
-          <DefaultStyles.Title>Account s</DefaultStyles.Title>
+          <DefaultStyles.Title>Account</DefaultStyles.Title>
           <DefaultStyles.FormContainer>
             <Formik 
               initialValues={baseDetails} 
@@ -61,18 +61,6 @@ function BaseAccount () {
               {({ handleSubmit: onSubmit, handleChange, handleBlur, values }) => (
                 <>
                   <Flex column>
-                  <View style={{ marginBottom: 25 }}>
-                    <FormInputField 
-                      placeholder="User name"
-                      secureTextEntry
-                      name="username"
-                      keyboardType="visible-password"
-                      handleChange={handleChange}
-                      handleBlur={handleBlur}
-                      returnKeyType="next"
-                      value={values.password}
-                      />
-                  </View>
                   <View style={{ marginBottom: 25 }}>
                     <FormInputField
                       name="email"
@@ -97,6 +85,18 @@ function BaseAccount () {
                     returnKeyType="next"
                     value={values.password}
                     />
+                  </View>
+                  <View style={{ marginBottom: 25 }}>
+                    <FormInputField 
+                      placeholder="User name"
+                      secureTextEntry
+                      name="username"
+                      keyboardType="visible-password"
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                      returnKeyType="next"
+                      value={values.password}
+                      />
                   </View>
                 </Flex>
                 <BasicButton

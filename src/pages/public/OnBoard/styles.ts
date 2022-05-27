@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 
 export const Title = styled.Text`
   font-size: 43px;
-  font-family: ${({ theme }) => theme.fonts.semiBold};
+  font-family: ${({ theme }) => theme.fonts.family.semiBold};
   color: ${({ theme }) => theme.colors.white};
 `
 
@@ -11,7 +11,7 @@ export const Title = styled.Text`
 export const Subtitle = styled.Text`
   font-size: 16px;
   color: ${({ theme }) => theme.colors.disabled};
-  font-family: ${({ theme }) => theme.fonts.mediumn};
+  font-family: ${({ theme }) => theme.fonts.family.mediumn};
   line-height: 32px;
 `
 

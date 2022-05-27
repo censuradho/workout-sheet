@@ -20,6 +20,6 @@ export const Container = styled.TouchableOpacity<Props>`
 export const Text = styled.Text<Props>`
   color: ${({ active, theme }) => active ? theme.colors.black : colors.white};
   font-size: 29px;
-  font-family: ${({ theme }) => theme.fonts.semiBold};
+  font-family: ${({ theme }) => theme.fonts.family.semiBold};
   margin-top: 11px;
 `

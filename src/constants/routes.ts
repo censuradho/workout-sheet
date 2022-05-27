@@ -15,6 +15,11 @@ const publicRoutes = {
   ON_BOARD: onBoard
 }
 
+export const privateRoutes = {
+  MAIN: 'MAIN'
+}
+
 export const routePaths = {
-  public: publicRoutes
+  public: publicRoutes,
+  private: privateRoutes
 }

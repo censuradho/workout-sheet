@@ -20,11 +20,11 @@ export const Container = styled.TouchableOpacity<Props>`
 export const Title = styled.Text<Props>`
   color: ${({ active, theme }) => active ? theme.colors.black : colors.white};
   font-size: 16px;
-  font-family: ${({ theme }) => theme.fonts.semiBold};
+  font-family: ${({ theme }) => theme.fonts.family.semiBold};
 `
 
 export const Label = styled.Text<Props>`
   color: ${({ active, theme }) => active ? theme.colors.black : colors.disabled};
   font-size: 16px;
-  font-family: ${({ theme }) => theme.fonts.mediumn};
+  font-family: ${({ theme }) => theme.fonts.family.mediumn};
 `

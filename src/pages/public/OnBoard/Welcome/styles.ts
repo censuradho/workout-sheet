@@ -13,7 +13,7 @@ export const ImageBackground = styled(ImageBackgroundNative).attrs(props => ({ .
 export const Title = styled.Text`
   font-size: 40px;
   color: ${({ theme }) => theme.colors.white};
-  font-family: ${({ theme }) => theme.fonts.mediumn};
+  font-family: ${({ theme }) => theme.fonts.family.mediumn};
   margin-bottom: 93px;
 `
 
@@ -29,7 +29,7 @@ export const Box = styled.View`
 `
 
 export const Span = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.mediumn};
+  font-family: ${({ theme }) => theme.fonts.family.mediumn};
   color: ${({ theme }) => theme.colors.white};
   font-size: 16px;
   margin-top: 16px;
@@ -40,7 +40,7 @@ export const Span = styled.Text`
 export const LinkLabel = styled.Text`
   font-size: 16px;
   color: ${({ theme }) => theme.colors.primary};
-  font-family: ${({ theme }) => theme.fonts.mediumn};
+  font-family: ${({ theme }) => theme.fonts.family.mediumn};
 `
 
 export const Link = styled.TouchableOpacity`

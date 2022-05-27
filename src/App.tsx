@@ -6,6 +6,8 @@ import { useFonts, Poppins_500Medium, Poppins_600SemiBold } from '@expo-google-f
 import ThemeProvider from 'src/theme'
 import RootRoute from './routes'
 
+import 'intl'
+import 'intl/locale-data/jsonp/pt-BR'
 
 export default function App() {
   const [isFontLoaded] = useFonts({
