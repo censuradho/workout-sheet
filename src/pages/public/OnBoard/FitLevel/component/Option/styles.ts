@@ -24,7 +24,7 @@ export const Title = styled.Text<Props>`
 `
 
 export const Label = styled.Text<Props>`
-  color: ${({ active, theme }) => active ? theme.colors.black : colors.disabled};
+  color: ${({ active, theme }) => active ? theme.colors.black : colors.darkGray};
   font-size: 16px;
   font-family: ${({ theme }) => theme.fonts.family.mediumn};
 `

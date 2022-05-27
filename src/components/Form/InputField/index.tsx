@@ -26,7 +26,7 @@ type InputFieldProps = NativeProps
 function BaseInputField({ value, ...props }: InputFieldProps) {
   const { colors } = useTheme()
 
-  return <Styles.Input {...props} placeholderTextColor={colors.disabled} />
+  return <Styles.Input {...props} placeholderTextColor={colors.gray} />
 }
 
 export const InputField = memo(BaseInputField)
