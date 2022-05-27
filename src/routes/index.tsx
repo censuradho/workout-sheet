@@ -99,6 +99,10 @@ function RootRoute() {
             name="WEEK"
             component={Pages.Week} 
           />
+          <Stack.Screen 
+            name="WORKOUT"
+            component={Pages.Workout} 
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

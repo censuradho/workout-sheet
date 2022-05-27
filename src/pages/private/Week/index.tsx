@@ -3,14 +3,13 @@ import { memo } from 'react'
 import { RootStackParamList } from 'src/routes/types';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { isEqual } from 'date-fns'
+import { FlatList } from 'react-native-gesture-handler';
 
 import * as Styles from './styles'
 
 import { data } from 'src/mock'
-import { FlatList } from 'react-native-gesture-handler';
-import { Card } from './components';
-import { getDateWithoutHour } from 'src/utils/help';
 
+import { Card } from './components';
 
 type WeekProps = NativeStackScreenProps<RootStackParamList, 'WEEK'>;
 
@@ -19,18 +18,18 @@ function BaseWeek ({ route }: WeekProps) {
 
   const { [id]: _data } = data
 
-  const cardData = Object.entries(_data.week).map(([key, value]) => ({
-    id: key,
+  const cardData = Object.entries(_data.workout).map(([key, value]) => ({
+    weekId: id,
+    workoutId: key,
     ...value
   }))
-
 
   return (
     <SafeAreaView>
       <Styles.Container>
         <FlatList 
           data={cardData}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.weekId}
           renderItem={({ item }) => {
             const workoutDate = new Date(item.date).setHours(0,0,0,0)
             const currentDate = new Date().setHours(0,0,0,0)

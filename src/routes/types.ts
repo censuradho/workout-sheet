@@ -10,4 +10,8 @@ export type RootStackParamList = {
   DONE: undefined,
   ACCOUNT: undefined,
   MAIN: undefined,
+  WORKOUT: {
+    weekId: string | number;
+    workoutId: string | number;
+  }
 };
