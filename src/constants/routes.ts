@@ -16,7 +16,8 @@ const publicRoutes = {
 }
 
 export const privateRoutes = {
-  MAIN: 'MAIN'
+  MAIN: 'MAIN',
+  WEEK: 'WEEK'
 }
 
 export const routePaths = {

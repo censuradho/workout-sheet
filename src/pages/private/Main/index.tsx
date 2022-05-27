@@ -46,6 +46,7 @@ function BaseMain () {
           </Box>
           <Styles.Avatar source={{ uri: 'https://github.com/censuradho.png' }}/>
         </Box>
+        <Styles.SectionTitle>Training  Weekly</Styles.SectionTitle>
         <Box>
           <FlatList 
             data={data}

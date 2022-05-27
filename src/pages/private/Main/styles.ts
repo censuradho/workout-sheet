@@ -30,4 +30,5 @@ export const SectionTitle = styled.Text`
   font-size: ${({ theme }) => theme.fonts.size.md};
   font-family: ${({ theme }) => theme.fonts.family.mediumn};
   color: ${({ theme }) => theme.colors.white};
+  margin-bottom: 18px;
 `
