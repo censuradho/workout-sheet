@@ -25,3 +25,9 @@ export const Avatar = styled.Image`
   height: ${RFValue(45)}px;
   border-radius: 45px;
 `
+
+export const SectionTitle = styled.Text`
+  font-size: ${({ theme }) => theme.fonts.size.md};
+  font-family: ${({ theme }) => theme.fonts.family.mediumn};
+  color: ${({ theme }) => theme.colors.white};
+`

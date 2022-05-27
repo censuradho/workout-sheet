@@ -1,7 +1,6 @@
 import { memo, ReactNode } from 'react'
 import { View, ViewStyle as RootViewStyle } from 'react-native'
 
-// import * as Styles from './styles'
 
 type ViewStyle =  Pick<RootViewStyle, 
   'alignItems' 
