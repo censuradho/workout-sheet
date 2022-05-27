@@ -5,7 +5,7 @@ import { memo } from 'react'
 import { routePaths } from 'src/constants/routes';
 
 import * as Styles from './styles'
-import { WeekProps } from 'src/pages/private/Week';
+
 import { format } from 'date-fns';
 
 interface CardProps extends Styles.Props {
@@ -29,7 +29,7 @@ function BaseCard ({
         onPress={() => navigation.navigate('WEEK', { id })} 
       >
         <Styles.Label active={active}>{label}</Styles.Label>
-        <Styles.Date active={active}>{format(date, 'dd, MMM')}</Styles.Date>
+        <Styles.Date active={active}>{format(new Date(date), 'dd, MMM')}</Styles.Date>
       </Styles.Container>
     </GestureHandlerRootView>
   )

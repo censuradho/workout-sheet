@@ -34,7 +34,7 @@ function RootRoute() {
           headerShown: false,
         }}
       >
-        <Stack.Screen 
+        {/* <Stack.Screen 
             name="WELCOME"
             component={OnBoard.Welcome}
           />
@@ -90,7 +90,7 @@ function RootRoute() {
             options={{
               animation: 'slide_from_right'
             }}
-          />
+          /> */}
           <Stack.Screen 
             name="MAIN"
             component={Pages.Main} 

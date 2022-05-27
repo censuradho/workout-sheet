@@ -9,11 +9,15 @@ import * as Styles from './styles'
 import { FlatList } from 'react-native-gesture-handler'
 import { Card } from './components'
 import { Box } from 'src/components'
-import { addDays } from 'date-fns/esm'
 
-import { months } from 'src/mock'
+import { data } from 'src/mock'
 
 function BaseMain () {
+  const cardsData = Object.entries(data).map(([key, value]) => ({
+    id: key,
+    ...value
+  }))
+
   return (
     <>
       <StatusBar style="dark" />
@@ -32,7 +36,7 @@ function BaseMain () {
         <Styles.SectionTitle>Training  Weekly</Styles.SectionTitle>
         <Box>
           <FlatList 
-            data={months}
+            data={cardsData}
             horizontal
             keyExtractor={item => item.id}
             renderItem={({ item, index }) => (

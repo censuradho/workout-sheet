@@ -4,6 +4,7 @@ import { buttons } from './buttons'
 import { basicButton } from './basicButton'
 import { sizes } from './sizes'
 import { borderRadius } from './borderRadius'
+import { cardWeek } from './cardWeek'
 
 export const theme = {
   colors,
@@ -12,5 +13,6 @@ export const theme = {
   basicButton,
   sizes,
   borderRadius,
+  cardWeek,
   activityOpacity: 0.7,
  }
