@@ -1,14 +1,38 @@
-import { memo } from 'react'
-import { View } from 'react-native'
+import { memo, ReactNode } from 'react'
+import { View, ViewStyle as RootViewStyle } from 'react-native'
 
 // import * as Styles from './styles'
 
-interface BoxProps {}
+type ViewStyle =  Pick<RootViewStyle, 
+  'alignItems' 
+  | 'alignSelf'
+  | 'alignContent'
+  | 'justifyContent'
+  | 'flex'
+  | 'marginBottom'
+  | 'marginRight'
+  | 'marginLeft'
+  | 'marginTop'
+  | 'marginHorizontal'
+  | 'marginVertical'
+  | 'flexDirection'
+  | 'backgroundColor'
+>
 
-function BaseBox (props: BoxProps) {
+
+interface BoxProps extends ViewStyle {
+  children: ReactNode;
+  fullWidth?: boolean
+}
+
+
+function BaseBox ({ children, fullWidth, ...props}: BoxProps) {
   return (
-    <View>
-      
+    <View style={{
+      ...props,
+      width: fullWidth ? '100%' : 'auto'
+    }}>
+      {children}
     </View>
   )
 }

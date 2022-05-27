@@ -8,6 +8,7 @@ import { Flex } from 'src/theme/globalStyles'
 import * as Styles from './styles'
 import { FlatList } from 'react-native-gesture-handler'
 import { Card } from './components'
+import { Box } from 'src/components'
 
 const data = [
   {
@@ -29,13 +30,13 @@ function BaseMain () {
     <>
       <StatusBar style="dark" />
       <Styles.Container>
-        <Flex>
-          <Flex column>
+        <Box flexDirection='row' justifyContent="space-between">
+          <Box>
             <Styles.Username>Hello, Gustavo</Styles.Username>
             <Styles.Date>{format(new Date(), 'dd, MMM')}</Styles.Date>
-          </Flex>
+          </Box>
           <Styles.Avatar source={{ uri: 'https://github.com/censuradho.png' }}/>
-        </Flex>
+        </Box>
         <FlatList 
           data={data}
           horizontal
