@@ -31,12 +31,17 @@ function BaseWeek ({ route }: WeekProps) {
         <FlatList 
           data={cardData}
           keyExtractor={item => item.id}
-          renderItem={({ item, index }) => (
-            <Card 
-              active={isEqual(new Date(item.date).setHours(0,0,0,0), new Date().setHours(0,0,0,0))} 
-              {...item} 
-            />
-          )}
+          renderItem={({ item }) => {
+            const workoutDate = new Date(item.date).setHours(0,0,0,0)
+            const currentDate = new Date().setHours(0,0,0,0)
+
+            return (
+              <Card 
+                active={isEqual(workoutDate, currentDate)} 
+                {...item} 
+              />
+            )
+          }}
         />
       </Styles.Container>
     </SafeAreaView>
