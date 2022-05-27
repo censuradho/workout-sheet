@@ -7,7 +7,7 @@ export const fonts = {
   },
   size: {
     /** 14px*/
-    xm: `${RFValue(14)}px`,
+    xm: `${RFValue(12)}px`,
     /** 16px*/
     sm: `${RFValue(16)}px`,
     /** 20px*/

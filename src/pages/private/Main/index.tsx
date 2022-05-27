@@ -11,23 +11,7 @@ import { Card } from './components'
 import { Box } from 'src/components'
 import { addDays } from 'date-fns/esm'
 
-const data = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    label: 'First Item',
-    date: new Date(),
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    label: 'Second Item',
-    date: addDays(new Date(), 1),
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    label: 'Third Item',
-    date: addDays(new Date(), 2),
-  },
-]
+import { months } from 'src/mock'
 
 function BaseMain () {
   return (
@@ -48,7 +32,7 @@ function BaseMain () {
         <Styles.SectionTitle>Training  Weekly</Styles.SectionTitle>
         <Box>
           <FlatList 
-            data={data}
+            data={months}
             horizontal
             keyExtractor={item => item.id}
             renderItem={({ item, index }) => (

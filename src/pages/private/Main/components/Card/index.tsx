@@ -6,16 +6,19 @@ import { routePaths } from 'src/constants/routes';
 
 import * as Styles from './styles'
 import { WeekProps } from 'src/pages/private/Week';
+import { format } from 'date-fns';
 
 interface CardProps extends Styles.Props {
   label: string;
-  id: string| number
+  id: string| number;
+  date: string | Date
 }
 
 function BaseCard ({ 
   active,
   label,
-  id
+  id,
+  date
 }: CardProps) {
   const navigation = useNavigation()
 
@@ -26,6 +29,7 @@ function BaseCard ({
         onPress={() => navigation.navigate('WEEK', { id })} 
       >
         <Styles.Label active={active}>{label}</Styles.Label>
+        <Styles.Date active={active}>{format(date, 'dd, MMM')}</Styles.Date>
       </Styles.Container>
     </GestureHandlerRootView>
   )
