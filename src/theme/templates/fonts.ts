@@ -12,5 +12,8 @@ export const fonts = {
     sm: `${RFValue(16)}px`,
     /** 20px*/
     md: `${RFValue(20)}px`,
+  },
+  lineHeight: {
+    sm: `${RFValue(23)}px`,
   }
 }

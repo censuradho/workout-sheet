@@ -18,6 +18,8 @@ type ViewStyle =  Pick<RootViewStyle,
   | 'backgroundColor'
   | 'paddingLeft'
   | 'paddingRight'
+  | 'flexWrap'
+  | 'flexShrink'
 >
 
 

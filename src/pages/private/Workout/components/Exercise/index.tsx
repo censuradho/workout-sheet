@@ -16,18 +16,18 @@ function BaseExercise ({
 }: ExerciseProps) {
   
   return (
-    <Box
-      flexDirection="row"
-      alignItems="center"
-      marginBottom={20}
-      backgroundColor="yellow"
-    >
+    <Styles.Container>
       <Styles.Image source={{ uri: imageUri }} />
-      <Box paddingLeft={16} fullWidth>
+      <Box 
+        paddingLeft={16}  
+        alignItems="flex-start" 
+        justifyContent="flex-start"
+        flex={1}
+      >
         <Styles.Label>{label}</Styles.Label>
         <Styles.Description>{description}</Styles.Description>
       </Box>
-    </Box>
+    </Styles.Container>
   )
 }
 

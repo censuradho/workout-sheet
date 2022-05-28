@@ -14,12 +14,21 @@ export const Label = styled.Text`
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fonts.family.semiBold};
   font-size: ${({ theme }) => theme.fonts.size.sm};
-  flex-shrink: 1;
+  line-height: ${({ theme }) => theme.fonts.lineHeight.sm};
 `
 
 export const Description = styled.Text`
   color: ${({ theme }) => theme.colors.darkGray};
   font-family: ${({ theme }) => theme.fonts.family.mediumn};
   font-size: ${({ theme }) => theme.fonts.size.xm};
-  flex-shrink: 1;
+  line-height: ${({ theme }) => theme.fonts.lineHeight.sm};
+`
+
+export const Container = styled.TouchableOpacity.attrs(props => ({
+  ...props,
+  activeOpacity: props.theme.activityOpacity,
+}))`
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 42px;
 `
