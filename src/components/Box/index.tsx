@@ -16,6 +16,8 @@ type ViewStyle =  Pick<RootViewStyle,
   | 'marginVertical'
   | 'flexDirection'
   | 'backgroundColor'
+  | 'paddingLeft'
+  | 'paddingRight'
 >
 
 

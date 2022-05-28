@@ -3,6 +3,7 @@ import styled from 'styled-components/native'
 
 export const Container = styled.View`
   flex: 1;
+  background: tomato;
 `
 
 export const Header = styled.View`
@@ -23,4 +24,8 @@ export const Week = styled.Text`
   color: ${({ theme }) => theme.colors.darkGray};
   font-size: ${({ theme }) => theme.fonts.size.sm};
   font-family: ${({ theme }) => theme.fonts.family.mediumn};
+`
+
+export const FlatListContainer = styled.View`
+  padding: ${({ theme }) => theme.sizes.sm};
 `

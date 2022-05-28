@@ -28,12 +28,13 @@ export const DayLetter = styled.Text<Props>`
 
 export const DayNumber = styled(DayLetter)<Props>`
   color: ${({ theme, variant = 'primary' }) => theme.cardWeek[variant].dayNumber};
+  width: 50px;
 `
 
 export const Title = styled.Text<Props>`
   color: ${({ theme, variant = 'primary' }) => theme.cardWeek[variant].dayLetter};
   width: 100%;
-  text-align: center;
+  margin-left: 40px;
   font-family: ${({ theme }) => theme.fonts.family.mediumn};
   font-size: ${({ theme }) => theme.fonts.size.sm};
   padding: 0 ${({ theme }) => theme.sizes.sm};
