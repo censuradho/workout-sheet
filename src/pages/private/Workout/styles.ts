@@ -30,3 +30,7 @@ export const FlatListContainer = styled.View`
   flex: 1;
   margin-top: 24px;
 `
+
+export const Footer = styled.View`
+  padding: 0 ${({ theme }) => theme.sizes.sm}
+`

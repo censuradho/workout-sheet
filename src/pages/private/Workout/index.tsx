@@ -10,7 +10,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { useTheme } from 'src/hooks';
 import { Exercise } from './components';
-import { Box } from 'src/components';
+import { Box, Button } from 'src/components';
 
 type WorkoutProps = NativeStackScreenProps<RootStackParamList, 'WORKOUT'>;
 
@@ -46,6 +46,9 @@ function BaseWorkout ({ route }: WorkoutProps) {
             )}
           />
         </Styles.FlatListContainer>
+        <Styles.Footer>
+          <Button>Start</Button>
+        </Styles.Footer>
       </Styles.Container>
     </SafeAreaView>
   )
