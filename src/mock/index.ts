@@ -8,6 +8,7 @@ export interface Exercise {
   series: number;
   thumb?: string;
   weight: number;
+  repeat?: number;
   rest: number
 }
 

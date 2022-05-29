@@ -4,6 +4,8 @@ import { BorderlessButton, BorderlessButtonProps, GestureHandlerRootView, BaseBu
 
 import { Icon, IconProps } from './icons'
 
+export * from './icons'
+
 interface ButtonIconProps extends Pick<BorderlessButtonProps, 'onPress'> {
   icon: IconProps
 }

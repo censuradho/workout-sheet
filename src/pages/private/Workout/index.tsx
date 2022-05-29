@@ -10,7 +10,7 @@ import { data, Exercise as ExerciseType } from 'src/mock'
 import { useTheme } from 'src/hooks';
 
 import { Execute, Exercise } from './components';
-import { Box, Button } from 'src/components';
+import { BasicButton, Box, Button } from 'src/components';
 
 import { RootStackParamList } from 'src/routes/types';
 
@@ -39,7 +39,8 @@ function BaseWorkout ({ route }: WorkoutProps) {
       <StatusBar backgroundColor={colors.white} />
       <Execute 
         visible={!!exercise} 
-        onClose={() => setExercise(null)} 
+        onClose={() => setExercise(null)}
+        data={exercise}
       />
       <Styles.Container>
         <Styles.Header>
@@ -57,6 +58,9 @@ function BaseWorkout ({ route }: WorkoutProps) {
         </Styles.FlatListContainer>
         <Styles.Footer>
           <Button>Start</Button>
+          <Box marginTop={15}>
+            <BasicButton>Complete workout</BasicButton>
+          </Box>
         </Styles.Footer>
       </Styles.Container>
     </SafeAreaView>

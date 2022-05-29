@@ -3,8 +3,8 @@ import { StatusBar } from 'expo-status-bar'
 import { memo, useEffect } from 'react'
 import { Modal, TouchableOpacity } from 'react-native'
 
-import { Box } from 'src/components'
-import { Icon } from 'src/components/ButtonIcon/icons'
+import { Box, Icon } from 'src/components'
+
 import { useTimer } from 'src/hooks'
 
 import type { Exercise } from 'src/mock'
@@ -19,7 +19,8 @@ interface ExecuteProps {
 
 function BaseExecute ({
   visible = false,
-  onClose
+  onClose,
+  data
 }: ExecuteProps) {
   const { start, time, reset } = useTimer({
     autostart: visible
@@ -32,7 +33,11 @@ function BaseExecute ({
 
   
   return (
-    <Modal visible={visible} animationType="slide">
+    <Modal 
+      visible={visible} 
+      animationType="slide"
+      onRequestClose={handleClose}
+    >
       <StatusBar style="light" backgroundColor="#000" translucent />
       <Styles.Container>
         <Box
@@ -45,6 +50,27 @@ function BaseExecute ({
             <Icon name="close" />
           </TouchableOpacity>
           <Styles.Counter>{format(new Date(time), 'mm:ss')}</Styles.Counter>
+        </Box>
+        <Box flex={1} marginTop={51}>
+          <Styles.Thumb source={{ uri: data?.thumb }} />
+          <Styles.Title>{data?.label}</Styles.Title>
+          <Box 
+            flexDirection="row" 
+            justifyContent="space-between"
+            marginTop={20}
+          >
+            <Styles.Info>{data?.repeat || 'Max repeats'}</Styles.Info>
+            <Styles.Info>{`${data?.series} series`}</Styles.Info>
+          </Box>
+          <Box 
+            flexDirection="row" 
+            justifyContent="space-between"
+            marginTop={20}
+          >
+            <Styles.Info>{`${data?.weight} weight`}</Styles.Info>
+            <Styles.Info>{`${data?.rest} rest`}</Styles.Info>
+          </Box>
+          <Styles.Description>{data?.description}</Styles.Description>
         </Box>
       </Styles.Container>
     </Modal>
