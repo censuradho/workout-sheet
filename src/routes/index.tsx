@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar'
 
 import { useTheme } from 'src/hooks'
 
-import * as Pages from 'src/pages/private'
+import * as Pages from 'src/pages'
 import * as OnBoard from 'src/pages/public/OnBoard'
 
 import { routePaths } from 'src/constants/routes'
@@ -35,6 +35,8 @@ function RootRoute() {
           headerShown: false,
         }}
       >
+			    <Stack.Screen name="SIGN_IN" component={Pages.SignIn} />
+
         {/* <Stack.Screen 
             name="WELCOME"
             component={OnBoard.Welcome}

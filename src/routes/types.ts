@@ -18,6 +18,7 @@ export type RootStackParamList = {
   DONE: undefined,
   ACCOUNT: undefined,
   MAIN: undefined,
+  SIGN_IN: undefined,
 };
 
 export type RootRoutesParamList  = RootStackParamList & RootMainParamList
