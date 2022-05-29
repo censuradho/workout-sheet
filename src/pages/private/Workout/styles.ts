@@ -6,10 +6,11 @@ export const Container = styled.View`
 `
 
 export const Header = styled.View`
-  height: ${RFPercentage(30)}px;
+  min-height: ${RFPercentage(20)}px;
   width: 100%;
   background: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.sizes.sm};
+  padding-bottom: 50px;
   justify-content: center;
 `
 

@@ -13,7 +13,7 @@ interface ButtonIconProps extends Pick<BorderlessButtonProps, 'onPress'> {
 function BaseButtonIcon (props: ButtonIconProps) {
   return (
     <GestureHandlerRootView>
-      <BorderlessButton {...props}>
+      <BorderlessButton {...props} style={{ padding: 10 }}>
         <Icon {...props.icon} />
       </BorderlessButton>
     </GestureHandlerRootView>

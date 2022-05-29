@@ -10,7 +10,7 @@ import { data, Exercise as ExerciseType } from 'src/mock'
 import { useTheme } from 'src/hooks';
 
 import { Execute, Exercise } from './components';
-import { BasicButton, Box, Button } from 'src/components';
+import { BasicButton, Box, Button, HeaderStack } from 'src/components';
 
 import { RootStackParamList } from 'src/routes/types';
 
@@ -44,6 +44,7 @@ function BaseWorkout ({ route }: WorkoutProps) {
       />
       <Styles.Container>
         <Styles.Header>
+          <HeaderStack backButtonColor="black" />
           <Styles.Week>{week?.label}</Styles.Week>
           <Styles.WorkoutTitle>{workout?.label}</Styles.WorkoutTitle>
         </Styles.Header>

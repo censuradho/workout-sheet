@@ -1,5 +1,13 @@
-export type RootStackParamList = {
+export type RootMainParamList = {
+  WORKOUT: {
+    weekId: string | number;
+    workoutId: string | number;
+  };
+  INDEX: undefined,
   WEEK: { id: string | number };
+}
+
+export type RootStackParamList = {
   WELCOME: undefined,
   GENDER: undefined,
   WEIGHT: undefined,
@@ -10,8 +18,6 @@ export type RootStackParamList = {
   DONE: undefined,
   ACCOUNT: undefined,
   MAIN: undefined,
-  WORKOUT: {
-    weekId: string | number;
-    workoutId: string | number;
-  }
 };
+
+export type RootRoutesParamList  = RootStackParamList & RootMainParamList

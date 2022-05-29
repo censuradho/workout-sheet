@@ -5,7 +5,7 @@ import { DefaultTheme } from 'styled-components/native';
 
 type Colors = keyof DefaultTheme['colors']
 
-type IconNames = 'close'
+type IconNames = 'close' | 'arrow-back'
 
 export interface IconProps {
   size?: number
@@ -24,7 +24,8 @@ function BaseIcon ({
     const currentColor = customColor || color || colors.white
 
   const icons: Record<IconNames, ReactNode> = {
-    close: <Ionicons name="close" size={size} color={currentColor} />
+    close: <Ionicons name="close" size={size} color={currentColor} />,
+    'arrow-back': <Ionicons name="arrow-back" size={size} color={currentColor} />
   }
 
   return (

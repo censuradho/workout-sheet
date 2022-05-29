@@ -10,6 +10,7 @@ import * as OnBoard from 'src/pages/public/OnBoard'
 import { routePaths } from 'src/constants/routes'
 
 import { RootStackParamList } from './types'
+import { Main } from './Main'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
@@ -91,7 +92,7 @@ function RootRoute() {
               animation: 'slide_from_right'
             }}
           /> */}
-          <Stack.Screen 
+          {/* <Stack.Screen 
             name="MAIN"
             component={Pages.Main} 
           />
@@ -102,7 +103,9 @@ function RootRoute() {
           <Stack.Screen 
             name="WORKOUT"
             component={Pages.Workout} 
-          />
+          /> */}
+
+			    <Stack.Screen name="MAIN" component={Main} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
