@@ -1,9 +1,11 @@
+import { format } from 'date-fns'
 import { StatusBar } from 'expo-status-bar'
-import { memo } from 'react'
+import { memo, useEffect } from 'react'
 import { Modal, TouchableOpacity } from 'react-native'
 
 import { Box } from 'src/components'
 import { Icon } from 'src/components/ButtonIcon/icons'
+import { useTimer } from 'src/hooks'
 
 import type { Exercise } from 'src/mock'
 
@@ -19,6 +21,16 @@ function BaseExecute ({
   visible = false,
   onClose
 }: ExecuteProps) {
+  const { start, time, reset } = useTimer({
+    autostart: visible
+  })
+
+  const handleClose = () => {
+    reset()
+    onClose?.()
+  }
+
+  
   return (
     <Modal visible={visible} animationType="slide">
       <StatusBar style="light" backgroundColor="#000" translucent />
@@ -29,10 +41,10 @@ function BaseExecute ({
           justifyContent="space-between" 
           alignItems="center"
         >
-          <TouchableOpacity onPress={onClose}>
+          <TouchableOpacity onPress={handleClose}>
             <Icon name="close" />
           </TouchableOpacity>
-          <Styles.Counter>12:00</Styles.Counter>
+          <Styles.Counter>{format(new Date(time), 'mm:ss')}</Styles.Counter>
         </Box>
       </Styles.Container>
     </Modal>
