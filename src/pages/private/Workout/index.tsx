@@ -12,9 +12,9 @@ import { useTheme } from 'src/hooks';
 import { Execute, Exercise } from './components';
 import { BasicButton, Box, Button, HeaderStack } from 'src/components';
 
-import { RootStackParamList } from 'src/routes/types';
+import { RootMainParamList } from 'src/routes/types';
 
-type WorkoutProps = NativeStackScreenProps<RootStackParamList, 'WORKOUT'>;
+type WorkoutProps = NativeStackScreenProps<RootMainParamList, 'WORKOUT'>;
 
 
 function BaseWorkout ({ route }: WorkoutProps) {
@@ -33,6 +33,10 @@ function BaseWorkout ({ route }: WorkoutProps) {
     thumb: 'https://images.unsplash.com/photo-1517130038641-a774d04afb3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     ...value
   }))
+
+  const handleStart = () => {
+    setExercise(exerciseData.find((value, index) => index === 0) || null)
+  }
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -58,7 +62,7 @@ function BaseWorkout ({ route }: WorkoutProps) {
           />
         </Styles.FlatListContainer>
         <Styles.Footer>
-          <Button>Start</Button>
+          <Button onPress={handleStart}>Start</Button>
           <Box marginTop={15}>
             <BasicButton>Complete workout</BasicButton>
           </Box>
