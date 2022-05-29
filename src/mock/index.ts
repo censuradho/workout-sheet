@@ -2,7 +2,7 @@ import { addDays, addWeeks } from "date-fns";
 
 const firstDay = new Date('2022-05-23T16:26:47.801Z')
 
-interface Exercise {
+export interface Exercise {
   label: string;
   description?: string;
   series: number;
@@ -162,7 +162,7 @@ export const data: Record<string, Data> = {
             thumb: 'https://images.unsplash.com/photo-1517130038641-a774d04afb3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
             rest: 60,
             series: 4,
-            weight: 150,
+            weight: 150,  
           }
         }
       }

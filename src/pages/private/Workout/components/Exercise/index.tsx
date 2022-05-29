@@ -4,20 +4,23 @@ import { Box } from 'src/components'
 import * as Styles from './styles'
 
 interface ExerciseProps {
-  imageUri: string;
+  thumb: string;
   label: string;
-  description?: string
+  description?: string,
+  onPress?: () => void
 }
 
 function BaseExercise ({
-  imageUri,
+  thumb,
   label,
-  description
+  description,
+  onPress
 }: ExerciseProps) {
   
   return (
-    <Styles.Container>
-      <Styles.Image source={{ uri: imageUri }} />
+
+    <Styles.Container onPress={onPress}>
+      <Styles.Image source={{ uri: thumb }} />
       <Box 
         paddingLeft={16}  
         alignItems="flex-start" 
