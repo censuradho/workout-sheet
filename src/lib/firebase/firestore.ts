@@ -1,4 +1,15 @@
-import { setDoc, doc, serverTimestamp, Timestamp, getDoc, addDoc, collection, getFirestore  } from 'firebase/firestore';
+import {  
+  doc,
+  serverTimestamp,
+  Timestamp, 
+  getDoc, 
+  addDoc, 
+  collection, 
+  getFirestore,
+  getDocs,
+  query, 
+  where
+} from 'firebase/firestore';
 
 import { CreateUser, User } from 'src/types/User';
 
@@ -11,7 +22,6 @@ export async function createUser (payload: CreateUser) {
 
     const  { 
       email, 
-      password, 
       uid, 
       username 
     } = payload
@@ -21,17 +31,15 @@ export async function createUser (payload: CreateUser) {
     const user: User = {
       uid, 
       email, 
-      password, 
       username,
       created_at: timestamp,
       updated_at: timestamp
     }
   
-    // await setDoc(doc(firestore, "users", payload.uid), user);
     await addDoc(collection(firestore, 'users'), user)
-    // await setDoc(doc(firestore, 'users', user.uid), user);
   
-    return await getDoc(doc(firestore, 'users', uid))
+    return await getDocs(query(collection(firestore, 'users'), where('uid', '==', uid)))
+
   } catch (err) {
     throw err
   }

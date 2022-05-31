@@ -16,6 +16,7 @@ import { useBooleanToggle } from "src/hooks/useBooleanToggle"
 
 import { createUserWithEmailAndPassword } from 'src/lib/firebase/auth'
 import { createUser } from "src/lib/firebase/firestore"
+import { setItem } from "src/lib/asyncStorage"
 
 const baseDetails = {
   email: '',
@@ -34,19 +35,26 @@ function BaseAccount () {
     toggleIsLoading()
     try {
       const response = await createUserWithEmailAndPassword(values.email, values.password)
+
+      const uid = response.user.uid
+
       await createUser({
         ...values,
-        uid: response.user.uid
+        uid
       })
+
+      await setItem('user', {
+        uid
+      })
+
       navigation.navigate('SIGN_IN')
-      console.log(context)
+ 
     } catch (err) {
       console.log(err)
     } finally {
       toggleIsLoading()
     }
   }
-
 
   return (
     <DefaultStyles.SafeAreaView>
@@ -57,7 +65,7 @@ function BaseAccount () {
             <Formik 
               initialValues={baseDetails} 
               onSubmit={handleSubmit} 
-              // validationSchema={createAccountSchemaValidation}
+              validationSchema={createAccountSchemaValidation}
             >
               {({ handleSubmit: onSubmit, handleChange, handleBlur, values }) => (
                 <>

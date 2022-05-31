@@ -36,7 +36,6 @@ function BaseSignIn ({ navigation }: SignInProps) {
     }
   }
 
-  console.log(inputRef)
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Styles.Container>

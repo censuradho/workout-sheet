@@ -1,6 +1,6 @@
 import type { Timestamp } from "firebase/firestore";
 
-export interface User {
+interface PrivateUser {
   uid: string;
   email: string;
   password: string;
@@ -9,9 +9,10 @@ export interface User {
   updated_at: Timestamp;
 }
 
-export type CreateUser = Pick<User, 
+export type User = Omit<PrivateUser, 'password'> 
+
+export type CreateUser = Pick<PrivateUser, 
   'email'
-  | 'password'
   | 'uid'
   | 'username'
 > 
