@@ -5,8 +5,6 @@ import { Formik } from 'formik'
 
 import { BasicButton,  FormInputField } from 'src/components'
 
-import { routePaths } from "src/constants/routes"
-
 import { Flex } from "src/theme/globalStyles"
 import * as DefaultStyles from '../styles'
 
@@ -18,7 +16,6 @@ import { useBooleanToggle } from "src/hooks/useBooleanToggle"
 
 import { createUserWithEmailAndPassword } from 'src/lib/firebase/auth'
 import { createUser } from "src/lib/firebase/firestore"
-import { firebase } from "src/lib/firebase"
 
 const baseDetails = {
   email: '',

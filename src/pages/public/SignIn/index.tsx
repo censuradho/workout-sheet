@@ -1,22 +1,38 @@
+import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { Formik } from 'formik'
 import { memo } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import LogoSvg from 'src/assets/logo.svg'
 
 import { Box, Button, FormInputField } from 'src/components'
+import { useBooleanToggle } from 'src/hooks'
+import { signInWithEmailAndPassword } from 'src/lib/firebase/auth'
+import { RootStackParamList } from 'src/routes/types'
 
 import * as Styles from './styles'
 
-interface SignInProps {}
+type SignInProps = NativeStackScreenProps<RootStackParamList, 'SIGN_IN'>;
 
 const baseDetails = {
   email: '',
   password: '',
 }
 
-function BaseSignIn (props: SignInProps) {
+function BaseSignIn ({ navigation }: SignInProps) {
+  const [isLoading, toggleIsLoading] = useBooleanToggle(false)
+
   const handleSubmit = async (values: typeof baseDetails) => {
-    console.log(values)
+    try {
+      const { email, password } = values
+
+      toggleIsLoading()
+      await signInWithEmailAndPassword(email, password)
+      navigation.navigate('MAIN')
+    } catch (err) {
+
+    } finally {
+      toggleIsLoading()
+    }
   }
 
   return (
@@ -48,7 +64,10 @@ function BaseSignIn (props: SignInProps) {
                   value={values.email}
                 />
               </Box>
-              <Button onPress={() => onSubmit()}>Sign In</Button>
+              <Button
+                isLoading={isLoading}
+                onPress={() => onSubmit()}
+              >Sign In</Button>
             </>
             )}
           </Formik>
