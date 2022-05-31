@@ -35,6 +35,7 @@ function RootRoute() {
           headerShown: false,
         }}
       >
+			    <Stack.Screen name="SIGN_IN" component={Pages.SignIn} />
           <Stack.Screen 
             name="ACCOUNT"
             component={OnBoard.Account}
@@ -42,7 +43,6 @@ function RootRoute() {
               animation: 'slide_from_right'
             }}
           />
-			    <Stack.Screen name="SIGN_IN" component={Pages.SignIn} />
 
         {/* <Stack.Screen 
             name="WELCOME"

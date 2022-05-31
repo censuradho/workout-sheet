@@ -1,6 +1,6 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { Formik } from 'formik'
-import { memo } from 'react'
+import { memo, useRef } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import LogoSvg from 'src/assets/logo.svg'
 
@@ -19,6 +19,7 @@ const baseDetails = {
 }
 
 function BaseSignIn ({ navigation }: SignInProps) {
+  const inputRef = useRef(null)
   const [isLoading, toggleIsLoading] = useBooleanToggle(false)
 
   const handleSubmit = async (values: typeof baseDetails) => {
@@ -35,6 +36,7 @@ function BaseSignIn ({ navigation }: SignInProps) {
     }
   }
 
+  console.log(inputRef)
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Styles.Container>
@@ -57,6 +59,10 @@ function BaseSignIn ({ navigation }: SignInProps) {
                 </Box>
                 <Box marginBottom={16}>
                 <FormInputField
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  secureTextEntry
+                  returnKeyType="go"
                   name="password"
                   placeholder="Password"
                   handleBlur={handleBlur}
@@ -65,6 +71,7 @@ function BaseSignIn ({ navigation }: SignInProps) {
                 />
               </Box>
               <Button
+                ref={inputRef}
                 isLoading={isLoading}
                 onPress={() => onSubmit()}
               >Sign In</Button>

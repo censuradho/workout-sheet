@@ -79,8 +79,8 @@ function BaseAccount () {
                   <FormInputField 
                     placeholder="Password"
                     secureTextEntry
+                    autoCapitalize="none"
                     name="password"
-                    keyboardType="visible-password"
                     handleChange={handleChange}
                     handleBlur={handleBlur}
                     returnKeyType="next"
