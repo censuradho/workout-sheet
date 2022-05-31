@@ -1,9 +1,9 @@
 import { useNavigation } from "@react-navigation/native"
-import { memo, useState } from "react"
-import { Platform, View } from 'react-native'
-import { ErrorMessage, Formik } from 'formik'
+import { memo } from "react"
+import {  View } from 'react-native'
+import { Formik } from 'formik'
 
-import { BasicButton, InputField, FormInputField } from 'src/components'
+import { BasicButton,  FormInputField } from 'src/components'
 
 import { routePaths } from "src/constants/routes"
 
@@ -16,6 +16,9 @@ import { useOnBoardContext } from "src/pages/public/OnBoard/OnBoardProvider"
 
 import { useBooleanToggle } from "src/hooks/useBooleanToggle"
 
+import { createUserWithEmailAndPassword } from 'src/lib/firebase/auth'
+import { createUser } from "src/lib/firebase/firestore"
+import { firebase } from "src/lib/firebase"
 
 const baseDetails = {
   email: '',
@@ -33,11 +36,12 @@ function BaseAccount () {
   const handleSubmit = async (values: typeof baseDetails) => {
     toggleIsLoading()
     try {
-      // const { data } = await postRegistration(values)
-      // dispatch(actionRegistration(data))
-
-      // setAuthHeader(data.token)
-      navigation.navigate('DONE')
+      const response = await createUserWithEmailAndPassword(values.email, values.password)
+      await createUser({
+        ...values,
+        uid: response.user.uid
+      })
+      navigation.navigate('SIGN_IN')
       console.log(context)
     } catch (err) {
       console.log(err)
@@ -100,6 +104,7 @@ function BaseAccount () {
                   </View>
                 </Flex>
                 <BasicButton
+                  disabled={isLoading}
                   iconRight={{
                     name: 'arrowForward',
                     size: 16
